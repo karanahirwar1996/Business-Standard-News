@@ -22,7 +22,7 @@ jobs:
           python-version: 3.x  # Change this to your desired Python version
 
       - name: Install dependencies
-        run: pip install pandas gspread oauth2client beautifulsoup4 pip install nltk
+        run: pip install pandas beautifulsoup4 pip install nltk
 
       - name: Run Python code
         run: python Business-Standard-News.py
