@@ -60,7 +60,7 @@ def positive_news():
             unclean_date.append(extract_date(d.text))
             time_list.append(extract_time(d.text))
 
-        script_tag = soup.find_all("script")[19]
+        script_tag = soup.find_all("script",{"type":"application/ld+json"})[5]
         json_data = json.loads(script_tag.string)
 
         urls = [item["url"] for item in json_data["itemListElement"]]
