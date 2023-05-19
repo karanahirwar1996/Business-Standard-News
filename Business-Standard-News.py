@@ -75,7 +75,7 @@ def positive_news():
 
     filtered_df = df.loc[(df['date'] <= pd.to_datetime(current_date)) & (df['date'] >= pd.to_datetime(previous_date)) & (df['Sentiment Score'] > 0.5)]
     sender_email = "karan.ahirwar1996@gmail.com"
-    receiver_email = ["anitaahirwar2112@gmail.com", sender_email]
+    receiver_email = list(pd.read_csv("./emaillist.csv")['mail'])
     password = "uccrgtqdnusrpmnk"
     table_html = filtered_df.to_html(index=False)
 
